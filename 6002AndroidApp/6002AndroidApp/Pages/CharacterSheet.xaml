@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_6002AndroidApp.CharacterSheet"
+             Title="CharacterSheet"
+             xmlns:companion="clr-namespace:_6002AndroidApp"
+             Background="Aqua">
+    <AbsoluteLayout>
+        <Image 
+            Source="{Binding CharImg}"
+            AbsoluteLayout.LayoutBounds="0.05,0.025,130,130"
+            AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Entry
+            Text="{Binding CharName}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="150,20,0.6,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"
+            TextColor="Black"
+            FontAutoScalingEnabled="true"
+            VerticalTextAlignment="End"/>
+
+        <ImageButton
+            Source="sheet_icon.png"
+            AbsoluteLayout.LayoutBounds="0.31,0.16,0.11,0.06"
+            AbsoluteLayout.LayoutFlags="All"
+            Command="{Binding ChooseImageCommand}"/>
+
+        <Entry            
+            Text="{Binding Stat1}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="25,175,0.10,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"
+            Keyboard="Numeric"/>
+
+        <Entry            
+            Text="{Binding Stat2}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="25,225,0.10,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"
+            Keyboard="Numeric"/>
+
+        <Entry            
+            Text="{Binding Stat3}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="25,275,0.10,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"
+            Keyboard="Numeric"/>
+
+        <Entry            
+            Text="{Binding Stat4}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="25,325,0.10,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"
+            Keyboard="Numeric"/>
+
+        <Entry            
+            Text="{Binding Stat5}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="25,375,0.10,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"
+            Keyboard="Numeric"/>
+
+        <Entry            
+            Text="{Binding Stat6}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="25,425,0.10,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"
+            Keyboard="Numeric"/>
+
+        <Entry            
+            Text="{Binding StatName1}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="75,175,0.20,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"/>
+
+        <Entry            
+            Text="{Binding StatName2}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="75,225,0.20,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"/>
+
+        <Entry            
+            Text="{Binding StatName3}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="75,275,0.20,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"/>
+
+        <Entry            
+            Text="{Binding StatName4}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="75,325,0.20,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"/>
+
+        <Entry            
+            Text="{Binding StatName5}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="75,375,0.20,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"/>
+
+        <Entry            
+            Text="{Binding StatName6}"
+            FontSize="25"
+            AbsoluteLayout.LayoutBounds="75,425,0.20,50"
+            AbsoluteLayout.LayoutFlags="WidthProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"/>
+        
+        <BoxView
+            AbsoluteLayout.LayoutBounds="0.85,0.4,190,400"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Color="LightSteelBlue"/>
+
+        <Editor            
+            Text="{Binding CharDesc}"
+            FontSize="15"
+            AbsoluteLayout.LayoutBounds="0.85,0.4,180,400"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}" />
+
+        <Button
+            AbsoluteLayout.LayoutBounds="0.5,0.95,210,60"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Text="Save Changes"
+            FontSize="25"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontAttributes="Bold"
+            Command="{Binding SaveChangesCommand}"/>
+        
+    </AbsoluteLayout>
+</ContentPage>

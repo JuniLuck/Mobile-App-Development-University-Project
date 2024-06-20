@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:companion="clr-namespace:_6002AndroidApp"
+             x:Class="_6002AndroidApp.MainPage"
+             BackgroundColor="LightGrey">
+
+    <FlexLayout Direction="Column" AlignItems="Center" Margin="10,5,10,10">
+        <VerticalStackLayout>
+            <Label
+                Text="{Binding AccountName, StringFormat=Logged In: {0}}"
+                FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+                HorizontalOptions="Start"
+                FontSize="20"
+                TextColor="Black" />
+
+            <Image
+                Margin="0,7,0,0"
+                Source="logo.png"
+                SemanticProperties.Description="Logo"
+                HeightRequest="250"/>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="50"
+                FontFamily="CvtcaCompHV"
+                Text="Tabletop Companion"
+                Style="{StaticResource SubHeadline}" />
+
+        </VerticalStackLayout>
+
+        <Grid ColumnSpacing="2" RowSpacing="2" Margin="20,20,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170" />
+                <ColumnDefinition Width="170" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" >
+                <HorizontalStackLayout Margin="-10">
+                    <Image 
+                        Source="{Binding CharacterImage}"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        WidthRequest="80"
+                        Margin="10,0,20,0"/>
+                    <Label 
+                        Text="{Binding CurrentCharacter}" 
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+                        FontSize="{x:Static Member=companion:StaticValues.HomeFontSize}"
+                        LineBreakMode="WordWrap" />
+                </HorizontalStackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="HomeCharacters"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Button
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+                FontSize="{x:Static Member=companion:StaticValues.HomeFontSize}"
+                BackgroundColor="OrangeRed"
+                Grid.Column="0"
+                Grid.Row="1"
+                Text="Dice Roller"
+                Clicked="HomeDice" />
+
+
+            <Button
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+                FontSize="{x:Static Member=companion:StaticValues.HomeFontSize}"
+                BackgroundColor="DeepSkyBlue"
+                Grid.Column="1"
+                Grid.Row="1"
+                Text="Character Sheet"
+                LineBreakMode="WordWrap"
+                Clicked="HomeChar" />
+
+            <Button
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+                FontSize="{x:Static Member=companion:StaticValues.HomeFontSize}"
+                BackgroundColor="Magenta"
+                Grid.Column="0"
+                Grid.Row="2"
+                Text="Spells and Abilities"
+                LineBreakMode="WordWrap"
+                Clicked="HomeSpells" />
+
+            <Button
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+                FontSize="{x:Static Member=companion:StaticValues.HomeFontSize}"
+                BackgroundColor="Yellow"
+                Grid.Column="1"
+                Grid.Row="2"
+                Text="Notes"
+                Clicked="HomeNotes" />
+
+            <Button
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+                FontSize="{x:Static Member=companion:StaticValues.HomeFontSize}"
+                BackgroundColor="Orange"
+                Grid.Column="0"
+                Grid.Row="3"
+                Text="Inventory"
+                Clicked="HomeInvent" />
+
+            <Button
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+                FontSize="{x:Static Member=companion:StaticValues.HomeFontSize}"
+                Background="HotPink"
+                Grid.Column="1"
+                Grid.Row="3"
+                Text="Account and Settings"
+                LineBreakMode="WordWrap"
+                Clicked="HomeSett" />
+
+        </Grid>
+
+    </FlexLayout>
+
+
+</ContentPage>

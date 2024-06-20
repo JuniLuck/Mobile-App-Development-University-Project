@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:_6002AndroidApp.ViewModels"
+             x:DataType="viewmodel:CharacterViewModel"
+             x:Class="_6002AndroidApp.Views.CharacterSelect"
+             Title="Characters"
+             xmlns:companion="clr-namespace:_6002AndroidApp">
+
+    <Grid 
+        x:Name="CharLayout"
+        ColumnSpacing="10" 
+        RowSpacing="10"
+        Margin="20,20,20,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+
+        <Button
+            TextColor="White"
+            FontAttributes="Bold"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontSize="25"
+            Text="New Character" 
+            Clicked="NewCharacterButton"
+            Grid.ColumnSpan="2"/>
+        <Frame Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0" BackgroundColor="Purple">
+            <HorizontalStackLayout Margin="-10">
+                <Label 
+                        Margin="20,-21,45,0"
+                        Text="+"
+                        TextColor="white"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+                        FontSize="100"
+                        LineBreakMode="WordWrap" />
+                <Label 
+                        Text="New Character" 
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+                        FontSize="30"
+                        LineBreakMode="WordWrap" />
+            </HorizontalStackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="NewCharacterButton"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </Grid>
+</ContentPage>

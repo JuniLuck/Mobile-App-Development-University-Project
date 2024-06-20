@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:companion="clr-namespace:_6002AndroidApp"
+             x:Class="_6002AndroidApp.DiceRoller"
+             Title="DiceRoller"
+             Background="LightGray">
+
+    <AbsoluteLayout>
+        <!--d20-->
+        <Polygon
+            Points="40 5,70 20,70 55,40 70,10 55,10 20"
+            Stroke="Black"
+            StrokeThickness="5"
+            StrokeLineJoin="Bevel"
+            AbsoluteLayout.LayoutBounds="0.1,0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Fill="{Binding D20col}"
+            Scale="1.5">
+            <Polygon.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding D20RollCommand}"/>
+            </Polygon.GestureRecognizers>
+        </Polygon>
+        <Label
+            Text="{Binding D20val}"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontSize="50"
+            HorizontalTextAlignment="Center"
+            AbsoluteLayout.LayoutBounds="0.092,0.198,90,60"
+            TextColor="LightGoldenrodYellow"
+            FontAttributes="Bold"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            x:Name="d20label"/>
+
+        <!--d12-->
+        <Polygon
+            Points="40 9,56.5 15,68 27.5,68 47.5,56.5 60,40 66,23.5 60,12 47.5,12 27.5,23.5 15"
+            Stroke="Black"
+            StrokeThickness="5"
+            StrokeLineJoin="Bevel"
+            AbsoluteLayout.LayoutBounds="0.5,0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Fill="{Binding D12col}"
+            Scale="1.5">
+            <Polygon.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding D12RollCommand}"/>
+            </Polygon.GestureRecognizers>
+        </Polygon>
+        <Label
+            Text="{Binding D12val}"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontSize="50"
+            HorizontalTextAlignment="Center"
+            AbsoluteLayout.LayoutBounds="0.515,0.205,70,60"
+            TextColor="LightGoldenrodYellow"
+            FontAttributes="Bold"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            x:Name="d12label"/>
+
+
+        <!--d10-->
+        <Polygon
+            Points="40 5,70 30,70 45,40 70,10 45,10 30"
+            Stroke="Black"
+            StrokeThickness="5"
+            StrokeLineJoin="Bevel"
+            AbsoluteLayout.LayoutBounds="0.9,0.2"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Fill="{Binding D10col}"
+            Scale="1.5">
+            <Polygon.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding D10RollCommand}"/>
+            </Polygon.GestureRecognizers>
+        </Polygon>
+        <Label
+            Text="{Binding D10val}"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontSize="50"
+            HorizontalTextAlignment="Center"
+            AbsoluteLayout.LayoutBounds="0.93,0.198,90,60"
+            TextColor="LightGoldenrodYellow"
+            FontAttributes="Bold"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            x:Name="d10label"/>
+
+        <!--d8-->
+        <Polygon
+            Points="40 5,70 37.5,40 70,10 37.5"
+            Stroke="Black"
+            StrokeThickness="5"
+            StrokeLineJoin="Bevel"
+            AbsoluteLayout.LayoutBounds="0.1,0.45"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Fill="{Binding D8col}"
+            Scale="1.5">
+            <Polygon.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding D8RollCommand}"/>
+            </Polygon.GestureRecognizers>
+        </Polygon>
+        <Label
+            Text="{Binding D8val}"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontSize="50"
+            HorizontalTextAlignment="Center"
+            AbsoluteLayout.LayoutBounds="0.092,0.448,90,60"
+            TextColor="LightGoldenrodYellow"
+            FontAttributes="Bold"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            x:Name="d8label"/>
+
+        <!--d6-->
+        <Polygon
+            Points="15 15,65 15,65 65,15 65"
+            Stroke="Black"
+            StrokeThickness="5"
+            StrokeLineJoin="Bevel"
+            AbsoluteLayout.LayoutBounds="0.5,0.44"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Fill="{Binding D6col}"
+            Scale="1.5">
+            <Polygon.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding D6RollCommand}"/>
+            </Polygon.GestureRecognizers>
+        </Polygon>
+        <Label
+            Text="{Binding D6val}"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontSize="50"
+            HorizontalTextAlignment="Center"
+            AbsoluteLayout.LayoutBounds="0.515,0.448,90,60"
+            TextColor="LightGoldenrodYellow"
+            FontAttributes="Bold"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            x:Name="d6label"/>
+
+        <!--d4-->
+        <Polygon
+            Points="40 15,65 65,10 65"
+            Stroke="Black"
+            StrokeThickness="5"
+            StrokeLineJoin="Bevel"
+            AbsoluteLayout.LayoutBounds="0.9,0.438"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Fill="{Binding D4col}"
+            Scale="1.5">
+            <Polygon.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding D4RollCommand}"/>
+            </Polygon.GestureRecognizers>
+        </Polygon>
+        <Label
+            Text="{Binding D4val}"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontSize="50"
+            HorizontalTextAlignment="Center"
+            AbsoluteLayout.LayoutBounds="0.93,0.458,90,60"
+            TextColor="LightGoldenrodYellow"
+            FontAttributes="Bold"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            x:Name="d4label"/>
+
+        <Label
+            Text="Total:"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontSize="30"
+            HorizontalTextAlignment="Center"
+            AbsoluteLayout.LayoutBounds="0.5,0.77,500,100"
+            TextColor="Black"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            x:Name="totalLabel"/>
+        
+        <Label
+            Text="{Binding Total}"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontSize="100"
+            HorizontalTextAlignment="Center"
+            AbsoluteLayout.LayoutBounds="0.5,0.8,500,100"
+            TextColor="Black"
+            FontAttributes="Bold"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            x:Name="total"/>
+
+        <Button 
+            BackgroundColor="Purple"
+            Text="Reset"
+            FontFamily="{x:Static Member=companion:StaticValues.GlobalFont}"
+            FontSize="30"
+            AbsoluteLayout.LayoutBounds="0.5,0.95,150,60"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Command="{Binding ResetCommand}"/>
+
+    </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_6002AndroidApp.Inventory"
+             xmlns:companion="clr-namespace:_6002AndroidApp"
+             Title="Inventory">
+
+    <FlexLayout Direction="Column">
+        <Button Text="New Item"
+                Command="{Binding AddItemCommand}"
+                FontAttributes="Bold"
+                FontSize="20"
+                BackgroundColor="DarkOrange"
+                BorderColor="Black"
+                BorderWidth="1"
+                TextColor="White"/>
+        <Grid ColumnDefinitions="4*,*,*">
+            <Label
+                Grid.Column="0"
+                Text="  Item"
+                FontAttributes="Bold"
+                FontSize="17"/>
+            <Label
+                Grid.Column="1"
+                Text="Value" 
+                FontAttributes="Bold"
+                FontSize="17"/>
+            <Label
+                Grid.Column="2"
+                Text="Weight" 
+                FontAttributes="Bold"
+                FontSize="17"/>
+        </Grid>
+        <CollectionView
+            Grid.Row="0"
+            ItemsSource="{Binding Invent}"
+            x:Name="inventCollection">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <SwipeView>
+                    <SwipeView.RightItems>
+                        <SwipeItem 
+                                Text="Delete"
+                                IconImageSource="bin.png"
+                                BackgroundColor="Red" 
+                                Command="{Binding Source={x:Reference inventCollection}, Path=BindingContext.DeleteItemCommand}"
+                                CommandParameter="{Binding Id}"/>
+                    </SwipeView.RightItems>
+                    <Grid
+                        Padding="10"
+                        ColumnDefinitions="5*,*,*">
+                            <Label
+                                 Grid.Column="0"
+                                 Text="{Binding Name}" />
+                            <Label
+                                 Grid.Column="1"
+                                 Text="{Binding Value}" />
+                            <Label
+                                 Grid.Column="2"
+                                 Text="{Binding Weight}" />
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </FlexLayout>
+</ContentPage>

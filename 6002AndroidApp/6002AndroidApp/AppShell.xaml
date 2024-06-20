@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="_6002AndroidApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:_6002AndroidApp.Views"
+    xmlns:local="clr-namespace:_6002AndroidApp"
+    Title="_6002AndroidApp"
+    FlyoutBehavior="Flyout">
+
+    <FlyoutItem
+        Title="Home"
+        Icon="logo.png">
+        
+        <ShellContent
+        Shell.NavBarIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    </FlyoutItem>
+
+    <ShellContent
+        ContentTemplate="{DataTemplate views:LogIn}" 
+        FlyoutItemIsVisible="False"
+        Shell.NavBarIsVisible="False"
+        Route="LogIn" 
+        Title="Sign In"
+        Shell.BackgroundColor="DarkBlue"
+        Shell.TitleColor="White" />
+
+    <ShellContent
+        ContentTemplate="{DataTemplate views:Register}"
+        FlyoutItem.IsVisible="False"
+        Route="Register" />
+
+    <FlyoutItem
+        Title="Select Character"
+        Icon="charlist_icon.png">
+
+        <ShellContent
+            Shell.NavBarIsVisible="False"
+            Shell.BackgroundColor="White"
+            Shell.TitleColor="Black"
+            ContentTemplate="{DataTemplate views:CharacterSelect}"
+            Route="CharacterSelect" />
+    </FlyoutItem>
+
+    <ShellContent
+        ContentTemplate="{DataTemplate views:NewCharacter}"
+        FlyoutItem.IsVisible="False"
+        Route="NewCharacter" />
+
+    <FlyoutItem
+        Title="Dice Roller"
+        Icon="dice_icon.png">
+
+        <ShellContent
+            Shell.BackgroundColor="red"
+            Shell.TitleColor="white"
+            ContentTemplate="{DataTemplate local:DiceRoller}"
+            Route="DiceRoller" />
+    </FlyoutItem>
+
+    <FlyoutItem
+        Title="Character Sheet"
+        Icon="sheet_icon.png">
+
+        <ShellContent
+            Shell.BackgroundColor="DeepSkyBlue"
+            Shell.TitleColor="white"
+            Title="Character Sheet"
+            ContentTemplate="{DataTemplate local:CharacterSheet}"
+            Route="CharacterSheet" />
+
+    </FlyoutItem>
+
+    <FlyoutItem
+        Title="Spells and Abilities"
+        Icon="abilities_icon.png">
+
+        <ShellContent
+            Shell.BackgroundColor="Magenta"
+            Shell.TitleColor="white"
+            Title="Spellbook and Abilities"
+            ContentTemplate="{DataTemplate local:SpellBook}"
+            Route="SpellBook" />
+    </FlyoutItem>
+
+    <FlyoutItem
+        Title="Notebook"
+        Icon="notes_icon.png">
+
+        <ShellContent
+            Shell.BackgroundColor="#ebdd00"
+            Shell.TitleColor="white"
+            Title="Notebook"
+            ContentTemplate="{DataTemplate local:Notes}"
+            Route="Notes" />
+    </FlyoutItem>
+
+    <FlyoutItem
+        Title="Inventory"
+        Icon="inventory_icon.png">
+
+        <ShellContent
+            Shell.BackgroundColor="Orange"
+            Shell.TitleColor="white"
+            Title="Inventory"
+            ContentTemplate="{DataTemplate local:Inventory}"
+            Route="Inventory" />
+    </FlyoutItem>
+
+    <FlyoutItem
+        Title="Account and Settings"
+        Icon="settings_icon.png">
+
+        <ShellContent
+            Shell.BackgroundColor="HotPink"
+            Shell.TitleColor="white"
+            Title="Account and Settings"
+            ContentTemplate="{DataTemplate local:AccountSettings}"
+            Route="AccountSettings" />
+    </FlyoutItem>
+
+</Shell>
