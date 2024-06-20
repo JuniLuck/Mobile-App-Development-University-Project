@@ -1,6 +1,6 @@
 # 6002CEM-Mobile-App
 
-### This is an upload of a university project that was committed to a private university repository.
+### This is an upload of a university project that was originally committed to a private university repository.
 
 ## Tabletop Companion
 
